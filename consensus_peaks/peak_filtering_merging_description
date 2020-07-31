@@ -1,0 +1,63 @@
+## Generation of a consensus set of coronary artery ATAC peaks
+
+# Step 1: Run PEPATAC on each coronary artery ATAC library individually and call peaks. This generates a narrowPeak file for each sample
+
+
+
+# Step 2: Determine overlap of peaks between samples
+
+Admittedly this step is a bit tedious. Made a separate script for each ATAC library. This step uses intersectBed in bedtools
+
+Used intersectBed to count the number times peaks in a library overlap peak coordinates in the other ATAC libraries. This generates a matrix for each ATAC library.
+Each row is a peak, each column (after the tenth column) is a comparison with another sample, and each element is the count of intersections
+
+All of the individual scripts are in the intersect_atac_peaks folder
+
+
+
+# Step 3: Filter to keep reproducible ATAC peaks and remove non-reproducible peaks
+
+Take the files generated in step 2 and use the script Coronary_peak_filtering.R
+
+This step removes rows (ATAC peaks) where the row sums (ie. number of intersections) is less than 2. Therefore this removes peaks that are not as reproducible across
+samples. 
+
+A potential limitation is that some sample-specific peaks might be filtered out, but I found that this step gives a much more reliable set of peaks and helps a lot in 
+downstream analyses by removing less confident peaks.
+
+
+
+# Step 4: Determine the summit of each ATAC-seq peak, create a peak summit file, and calculate a normalized score for each peak
+
+Initially when making a master set of coronary artery ATAC peaks we observed that peaks from high quality libraries (high TSS score, high FRiP) were quite overrepresented
+in the final peak set. To address this we followed a similar procedure as used by Corces et al. "The chromatin accessibility landscape of primary human cancers" Science 2018
+
+Follow the script Create_summit_file_scorepermillion.R
+
+Here is the description by Corces et al.
+
+"The peak summits were then extended by 250 bp on either side to a final width of 501 bp, filtered by the ENCODE hg38 blacklist (https://www.encodeproject.org/annotations/ENCSR636HFF/), 
+and filtered to remove peaks that extend beyond the ends of chromosomes. Overlapping peaks called within a single sample were handled using an iterative removal procedure. First, the most 
+significant peak is kept and any peak that directly overlaps with that significant peak is removed. Then, this process iterates to the next most significant peak and so on until all peaks 
+have either been kept or removed due to direct overlap with a more significant peak. This prevents the removal of peaks due to “daisy chaining” or indirect overlap and simultaneously maintains 
+a compendium of fixed-width peaks. This resulted in a set of fixed-width peaks for each sample which we refer to here as a “sample peak set”. We found that when samples varied in read depth or 
+quality, the MACS2 score varied proportionally due to the nature of the Poisson distribution test in MACS2. Typically, this type of inter-sample variation is handled using a reads-in-peaks 
+normalization. However, this type of normalization is not possible during the process of calling peaks because one must know the peak set to perform a reads-in-peaks normalization. For this 
+reason, we developed a robust method to normalize peak significance scores across samples and cancer types. To do this, the MACS2 peak scores (-log10(p-value)) for each sample were converted 
+to a “score per million” by dividing each individual peak score by the sum of all of the peak scores in the given sample divided by 1 million. We carry out this procedure because as sample quality 
+or read depth increases, the number of peaks called and the significance of those peak calls likewise increases. In this way, we are able to normalize peak calls for sample quality and total 
+sequencing depth without performing a reads-in-peaks normalization (which is not possible at this stage of analysis). This normalization method allows for direct comparison of peaks across donors, 
+enabling the generation of a merged peak set for each cancer type as described below."
+
+
+
+# Step 5: Extend peak summits by 250 bp in each direction (to give 501 bp fixed-width peaks) and merge peaks
+
+Use the script merge_atac_peaks.slurm
+
+Adapted from:
+https://yiweiniu.github.io/blog/2019/03/ATAC-seq-data-analysis-from-FASTQ-to-peaks/
+https://bedops.readthedocs.io/en/latest/content/usage-examples/master-list.html
+
+A visualization is here:
+https://www.archrproject.com/bookdown/the-iterative-overlap-peak-merging-procedure.html
