@@ -6,7 +6,7 @@
 #SBATCH --time=10:00:00
 #SBATCH --partition=standard
 #SBATCH --account=cphg-millerlab
-/sfs/qumulo/qproject/CPHG/MILLER/CAD_QTL/coronary_QTL/software/Feature_Count/bin/featureCounts -a coronary_consensus_peaks.saf -F SAF -o coronary_artery_counts_matrix \
+/sfs/qumulo/qproject/CPHG/MILLER/CAD_QTL/coronary_QTL/software/Feature_Count/bin/featureCounts -p -a coronary_consensus_peaks.saf -F SAF -o coronary_artery_counts_matrix \
 UVA001_CA_ATAC_sort_dedup.bam \
 UVA002_CA_ATAC_sort_dedup.bam \
 UVA005_CA_ATAC_sort_dedup.bam \
