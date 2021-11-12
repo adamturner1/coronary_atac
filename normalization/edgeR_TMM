@@ -1,0 +1,18 @@
+#Load packages
+library(tidyverse)
+library(edgeR)
+
+#Read raw counts
+a <- read.table("coronary_artery_counts_matrix", header=T, row.names=1)
+a2 <- a[,6:124]
+
+#Perform TMM normalization
+y <- DGEList(counts=a2)
+y <- calcNormFactors(y)
+z <- cpm(y)
+
+rownames(z) <- rownames(a2)
+colnames(z) <- colnames(a2)
+
+#Write normalized ATAC counts
+write.table(z, file="TMM_normalized_counts.txt", sep="\t", quote=FALSE, col.names=TRUE, row.names=TRUE)
