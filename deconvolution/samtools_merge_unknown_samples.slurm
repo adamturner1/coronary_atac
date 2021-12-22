@@ -1,0 +1,53 @@
+#!/bin/bash
+#SBATCH --nodes=1
+#SBATCH --tasks=1
+#SBATCH --cpus-per-task=20
+#SBATCH --mem=80000
+#SBATCH --time=1-00:00:00
+#SBATCH --partition=standard
+#SBATCH --account=cphg-millerlab
+module load samtools
+samtools merge unknown_all_reads.bam Unknown/scA_unknown_filter.sorted.bam \
+Unknown/scB_unknown_filter.sorted.bam \
+Unknown/scC_unknown_filter.sorted.bam \
+Unknown/scD_unknown_filter.sorted.bam \
+Unknown/scE_unknown_filter.sorted.bam \
+Unknown/scF_unknown_filter.sorted.bam \
+Unknown/scG_unknown_filter.sorted.bam \
+Unknown/scH_unknown_filter.sorted.bam \
+Unknown/scI_unknown_filter.sorted.bam \
+Unknown/scJ_unknown_filter.sorted.bam \
+Unknown/scK_unknown_filter.sorted.bam \
+Unknown/scL_unknown_filter.sorted.bam \
+Unknown/scM_unknown_filter.sorted.bam \
+Unknown/scN_unknown_filter.sorted.bam \
+Unknown/scO_unknown_filter.sorted.bam \
+Unknown/scP_unknown_filter.sorted.bam \
+Unknown/scQ_unknown_filter.sorted.bam \
+Unknown/scR_unknown_filter.sorted.bam \
+Unknown/scS_unknown_filter.sorted.bam \
+Unknown/scT_unknown_filter.sorted.bam \
+Unknown/scU_unknown_filter.sorted.bam \
+Unknown/scV_unknown_filter.sorted.bam \
+Unknown/scW_unknown_filter.sorted.bam \
+Unknown/scX_unknown_filter.sorted.bam \
+Unknown/scY_unknown_filter.sorted.bam \
+Unknown/scZ_unknown_filter.sorted.bam \
+Unknown/scAA_unknown_filter.sorted.bam \
+Unknown/scAB_unknown_filter.sorted.bam \
+Unknown/scAC_unknown_filter.sorted.bam \
+Unknown/scAD_unknown_filter.sorted.bam \
+Unknown/scAE_unknown_filter.sorted.bam \
+Unknown/scAF_unknown_filter.sorted.bam \
+Unknown/scAG_unknown_filter.sorted.bam \
+Unknown/scAH_unknown_filter.sorted.bam \
+Unknown/scAI_unknown_filter.sorted.bam \
+Unknown/scAJ_unknown_filter.sorted.bam \
+Unknown/scAK_unknown_filter.sorted.bam \
+Unknown/scAL_unknown_filter.sorted.bam \
+Unknown/scAM_unknown_filter.sorted.bam \
+Unknown/scAN_unknown_filter.sorted.bam \
+Unknown/scAO_unknown_filter.sorted.bam \
+Unknown/scAP_unknown_filter.sorted.bam \
+Unknown/scAQ_unknown_filter.sorted.bam \
+Unknown/scAR_unknown_filter.sorted.bam
