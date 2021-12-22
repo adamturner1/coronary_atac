@@ -1,0 +1,49 @@
+#!/bin/bash
+#SBATCH --nodes=1
+#SBATCH --tasks=1
+#SBATCH --cpus-per-task=20
+#SBATCH --mem=80000
+#SBATCH --time=1-00:00:00
+#SBATCH --partition=standard
+#SBATCH --account=cphg-millerlab
+module load samtools
+samtools merge Endothelial_all_reads.bam Endothelial_all_bam/UVA005_Endothelial_filter.sorted.bam \
+Endothelial_all_bam/UVA007_Endothelial_filter.sorted.bam \
+Endothelial_all_bam/UVA008_Endothelial_filter.sorted.bam \
+Endothelial_all_bam/UVA009_Endothelial_filter.sorted.bam \
+Endothelial_all_bam/UVA014_Endothelial_filter.sorted.bam \
+Endothelial_all_bam/UVA015_Endothelial_filter.sorted.bam \
+Endothelial_all_bam/UVA016_Endothelial_filter.sorted.bam \
+Endothelial_all_bam/UVA017_Endothelial_filter.sorted.bam \
+Endothelial_all_bam/UVA019_Endothelial_filter.sorted.bam \
+Endothelial_all_bam/UVA020_Endothelial_filter.sorted.bam \
+Endothelial_all_bam/UVA023_Endothelial_filter.sorted.bam \
+Endothelial_all_bam/UVA024_Endothelial_filter.sorted.bam \
+Endothelial_all_bam/UVA030_Endothelial_filter.sorted.bam \
+Endothelial_all_bam/UVA036_Endothelial_filter.sorted.bam \
+Endothelial_all_bam/UVA039_Endothelial_filter.sorted.bam \
+Endothelial_all_bam/UVA040_Endothelial_filter.sorted.bam \
+Endothelial_all_bam/UVA043_Endothelial_filter.sorted.bam \
+Endothelial_all_bam/UVA045_Endothelial_filter.sorted.bam \
+Endothelial_all_bam/UVA046_Endothelial_filter.sorted.bam \
+Endothelial_all_bam/UVA049_Endothelial_filter.sorted.bam \
+Endothelial_all_bam/UVA050_Endothelial_filter.sorted.bam \
+Endothelial_all_bam/UVA053_Endothelial_filter.sorted.bam \
+Endothelial_all_bam/UVA054_Endothelial_filter.sorted.bam \
+Endothelial_all_bam/UVA057_Endothelial_filter.sorted.bam \
+Endothelial_all_bam/UVA058_Endothelial_filter.sorted.bam \
+Endothelial_all_bam/UVA061_Endothelial_filter.sorted.bam \
+Endothelial_all_bam/UVA062_Endothelial_filter.sorted.bam \
+Endothelial_all_bam/UVA064_Endothelial_filter.sorted.bam \
+Endothelial_all_bam/UVA066_Endothelial_filter.sorted.bam \
+Endothelial_all_bam/UVA067_Endothelial_filter.sorted.bam \
+Endothelial_all_bam/UVA068_Endothelial_filter.sorted.bam \
+Endothelial_all_bam/UVA069_Endothelial_filter.sorted.bam \
+Endothelial_all_bam/UVA079_Endothelial_filter.sorted.bam \
+Endothelial_all_bam/UVA080_Endothelial_filter.sorted.bam \
+Endothelial_all_bam/UVA083_Endothelial_filter.sorted.bam \
+Endothelial_all_bam/UVA094_Endothelial_filter.sorted.bam \
+Endothelial_all_bam/UVA108_Endothelial_filter.sorted.bam \
+Endothelial_all_bam/UVA112_Endothelial_filter.sorted.bam \
+Endothelial_all_bam/UVA124_Endothelial_filter.sorted.bam \
+Endothelial_all_bam/UVA153_Endothelial_filter.sorted.bam
