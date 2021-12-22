@@ -1,0 +1,53 @@
+#!/bin/bash
+#SBATCH --nodes=1
+#SBATCH --tasks=1
+#SBATCH --cpus-per-task=20
+#SBATCH --mem=80000
+#SBATCH --time=1-00:00:00
+#SBATCH --partition=standard
+#SBATCH --account=cphg-millerlab
+module load samtools
+samtools merge Mast_all_reads.bam Mast/scA_Mast_filter.sorted.bam \
+Mast/scB_Mast_filter.sorted.bam \
+Mast/scC_Mast_filter.sorted.bam \
+Mast/scD_Mast_filter.sorted.bam \
+Mast/scE_Mast_filter.sorted.bam \
+Mast/scF_Mast_filter.sorted.bam \
+Mast/scG_Mast_filter.sorted.bam \
+Mast/scH_Mast_filter.sorted.bam \
+Mast/scI_Mast_filter.sorted.bam \
+Mast/scJ_Mast_filter.sorted.bam \
+Mast/scK_Mast_filter.sorted.bam \
+Mast/scL_Mast_filter.sorted.bam \
+Mast/scM_Mast_filter.sorted.bam \
+Mast/scN_Mast_filter.sorted.bam \
+Mast/scO_Mast_filter.sorted.bam \
+Mast/scP_Mast_filter.sorted.bam \
+Mast/scQ_Mast_filter.sorted.bam \
+Mast/scR_Mast_filter.sorted.bam \
+Mast/scS_Mast_filter.sorted.bam \
+Mast/scT_Mast_filter.sorted.bam \
+Mast/scU_Mast_filter.sorted.bam \
+Mast/scV_Mast_filter.sorted.bam \
+Mast/scW_Mast_filter.sorted.bam \
+Mast/scX_Mast_filter.sorted.bam \
+Mast/scY_Mast_filter.sorted.bam \
+Mast/scZ_Mast_filter.sorted.bam \
+Mast/scAA_Mast_filter.sorted.bam \
+Mast/scAB_Mast_filter.sorted.bam \
+Mast/scAC_Mast_filter.sorted.bam \
+Mast/scAD_Mast_filter.sorted.bam \
+Mast/scAE_Mast_filter.sorted.bam \
+Mast/scAF_Mast_filter.sorted.bam \
+Mast/scAG_Mast_filter.sorted.bam \
+Mast/scAH_Mast_filter.sorted.bam \
+Mast/scAI_Mast_filter.sorted.bam \
+Mast/scAJ_Mast_filter.sorted.bam \
+Mast/scAK_Mast_filter.sorted.bam \
+Mast/scAL_Mast_filter.sorted.bam \
+Mast/scAM_Mast_filter.sorted.bam \
+Mast/scAN_Mast_filter.sorted.bam \
+Mast/scAO_Mast_filter.sorted.bam \
+Mast/scAP_Mast_filter.sorted.bam \
+Mast/scAQ_Mast_filter.sorted.bam \
+Mast/scAR_Mast_filter.sorted.bam
