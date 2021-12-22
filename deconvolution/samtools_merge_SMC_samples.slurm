@@ -1,0 +1,50 @@
+#!/bin/bash
+#SBATCH --nodes=1
+#SBATCH --tasks=1
+#SBATCH --cpus-per-task=20
+#SBATCH --mem=80000
+#SBATCH --time=5-00:00:00
+#SBATCH --partition=standard
+#SBATCH --account=cphg-millerlab
+module load samtools
+samtools merge SMC_all_reads.bam SMC_all_bam/UVA005_SMC_filter.sorted.bam \
+SMC_all_bam/UVA007_SMC_filter.sorted.bam \
+SMC_all_bam/UVA008_SMC_filter.sorted.bam \
+SMC_all_bam/UVA009_SMC_filter.sorted.bam \
+SMC_all_bam/UVA014_SMC_filter.sorted.bam \
+SMC_all_bam/UVA015_SMC_filter.sorted.bam \
+SMC_all_bam/UVA016_SMC_filter.sorted.bam \
+SMC_all_bam/UVA017_SMC_filter.sorted.bam \
+SMC_all_bam/UVA019_SMC_filter.sorted.bam \
+SMC_all_bam/UVA020_SMC_filter.sorted.bam \
+SMC_all_bam/UVA023_SMC_filter.sorted.bam \
+SMC_all_bam/UVA024_SMC_filter.sorted.bam \
+SMC_all_bam/UVA027_SMC_filter.sorted.bam \
+SMC_all_bam/UVA030_SMC_filter.sorted.bam \
+SMC_all_bam/UVA036_SMC_filter.sorted.bam \
+SMC_all_bam/UVA039_SMC_filter.sorted.bam \
+SMC_all_bam/UVA040_SMC_filter.sorted.bam \
+SMC_all_bam/UVA043_SMC_filter.sorted.bam \
+SMC_all_bam/UVA045_SMC_filter.sorted.bam \
+SMC_all_bam/UVA046_SMC_filter.sorted.bam \
+SMC_all_bam/UVA049_SMC_filter.sorted.bam \
+SMC_all_bam/UVA050_SMC_filter.sorted.bam \
+SMC_all_bam/UVA053_SMC_filter.sorted.bam \
+SMC_all_bam/UVA054_SMC_filter.sorted.bam \
+SMC_all_bam/UVA057_SMC_filter.sorted.bam \
+SMC_all_bam/UVA058_SMC_filter.sorted.bam \
+SMC_all_bam/UVA061_SMC_filter.sorted.bam \
+SMC_all_bam/UVA062_SMC_filter.sorted.bam \
+SMC_all_bam/UVA064_SMC_filter.sorted.bam \
+SMC_all_bam/UVA066_SMC_filter.sorted.bam \
+SMC_all_bam/UVA067_SMC_filter.sorted.bam \
+SMC_all_bam/UVA068_SMC_filter.sorted.bam \
+SMC_all_bam/UVA069_SMC_filter.sorted.bam \
+SMC_all_bam/UVA079_SMC_filter.sorted.bam \
+SMC_all_bam/UVA080_SMC_filter.sorted.bam \
+SMC_all_bam/UVA083_SMC_filter.sorted.bam \
+SMC_all_bam/UVA094_SMC_filter.sorted.bam \
+SMC_all_bam/UVA108_SMC_filter.sorted.bam \
+SMC_all_bam/UVA112_SMC_filter.sorted.bam \
+SMC_all_bam/UVA124_SMC_filter.sorted.bam \
+SMC_all_bam/UVA153_SMC_filter.sorted.bam
