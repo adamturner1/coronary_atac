@@ -1,0 +1,50 @@
+#!/bin/bash
+#SBATCH --nodes=1
+#SBATCH --tasks=1
+#SBATCH --cpus-per-task=20
+#SBATCH --mem=80000
+#SBATCH --time=3-00:00:00
+#SBATCH --partition=standard
+#SBATCH --account=cphg-millerlab
+module load samtools
+samtools merge Macrophage_all_reads.bam Macrophage_all_bam/UVA005_Macrophage_filter.sorted.bam \
+Macrophage_all_bam/UVA007_Macrophage_filter.sorted.bam \
+Macrophage_all_bam/UVA008_Macrophage_filter.sorted.bam \
+Macrophage_all_bam/UVA009_Macrophage_filter.sorted.bam \
+Macrophage_all_bam/UVA014_Macrophage_filter.sorted.bam \
+Macrophage_all_bam/UVA015_Macrophage_filter.sorted.bam \
+Macrophage_all_bam/UVA016_Macrophage_filter.sorted.bam \
+Macrophage_all_bam/UVA017_Macrophage_filter.sorted.bam \
+Macrophage_all_bam/UVA019_Macrophage_filter.sorted.bam \
+Macrophage_all_bam/UVA020_Macrophage_filter.sorted.bam \
+Macrophage_all_bam/UVA023_Macrophage_filter.sorted.bam \
+Macrophage_all_bam/UVA024_Macrophage_filter.sorted.bam \
+Macrophage_all_bam/UVA027_Macrophage_filter.sorted.bam \
+Macrophage_all_bam/UVA030_Macrophage_filter.sorted.bam \
+Macrophage_all_bam/UVA036_Macrophage_filter.sorted.bam \
+Macrophage_all_bam/UVA039_Macrophage_filter.sorted.bam \
+Macrophage_all_bam/UVA040_Macrophage_filter.sorted.bam \
+Macrophage_all_bam/UVA043_Macrophage_filter.sorted.bam \
+Macrophage_all_bam/UVA045_Macrophage_filter.sorted.bam \
+Macrophage_all_bam/UVA046_Macrophage_filter.sorted.bam \
+Macrophage_all_bam/UVA049_Macrophage_filter.sorted.bam \
+Macrophage_all_bam/UVA050_Macrophage_filter.sorted.bam \
+Macrophage_all_bam/UVA053_Macrophage_filter.sorted.bam \
+Macrophage_all_bam/UVA054_Macrophage_filter.sorted.bam \
+Macrophage_all_bam/UVA057_Macrophage_filter.sorted.bam \
+Macrophage_all_bam/UVA058_Macrophage_filter.sorted.bam \
+Macrophage_all_bam/UVA061_Macrophage_filter.sorted.bam \
+Macrophage_all_bam/UVA062_Macrophage_filter.sorted.bam \
+Macrophage_all_bam/UVA064_Macrophage_filter.sorted.bam \
+Macrophage_all_bam/UVA066_Macrophage_filter.sorted.bam \
+Macrophage_all_bam/UVA067_Macrophage_filter.sorted.bam \
+Macrophage_all_bam/UVA068_Macrophage_filter.sorted.bam \
+Macrophage_all_bam/UVA069_Macrophage_filter.sorted.bam \
+Macrophage_all_bam/UVA079_Macrophage_filter.sorted.bam \
+Macrophage_all_bam/UVA080_Macrophage_filter.sorted.bam \
+Macrophage_all_bam/UVA083_Macrophage_filter.sorted.bam \
+Macrophage_all_bam/UVA094_Macrophage_filter.sorted.bam \
+Macrophage_all_bam/UVA108_Macrophage_filter.sorted.bam \
+Macrophage_all_bam/UVA112_Macrophage_filter.sorted.bam \
+Macrophage_all_bam/UVA124_Macrophage_filter.sorted.bam \
+Macrophage_all_bam/UVA153_Macrophage_filter.sorted.bam
