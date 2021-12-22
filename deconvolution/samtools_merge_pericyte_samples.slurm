@@ -1,0 +1,53 @@
+#!/bin/bash
+#SBATCH --nodes=1
+#SBATCH --tasks=1
+#SBATCH --cpus-per-task=20
+#SBATCH --mem=80000
+#SBATCH --time=1-00:00:00
+#SBATCH --partition=standard
+#SBATCH --account=cphg-millerlab
+module load samtools
+samtools merge Pericyte_all_reads.bam Pericyte/scA_Pericyte_filter.sorted.bam \
+Pericyte/scB_Pericyte_filter.sorted.bam \
+Pericyte/scC_Pericyte_filter.sorted.bam \
+Pericyte/scD_Pericyte_filter.sorted.bam \
+Pericyte/scE_Pericyte_filter.sorted.bam \
+Pericyte/scF_Pericyte_filter.sorted.bam \
+Pericyte/scG_Pericyte_filter.sorted.bam \
+Pericyte/scH_Pericyte_filter.sorted.bam \
+Pericyte/scI_Pericyte_filter.sorted.bam \
+Pericyte/scJ_Pericyte_filter.sorted.bam \
+Pericyte/scK_Pericyte_filter.sorted.bam \
+Pericyte/scL_Pericyte_filter.sorted.bam \
+Pericyte/scM_Pericyte_filter.sorted.bam \
+Pericyte/scN_Pericyte_filter.sorted.bam \
+Pericyte/scO_Pericyte_filter.sorted.bam \
+Pericyte/scP_Pericyte_filter.sorted.bam \
+Pericyte/scQ_Pericyte_filter.sorted.bam \
+Pericyte/scR_Pericyte_filter.sorted.bam \
+Pericyte/scS_Pericyte_filter.sorted.bam \
+Pericyte/scT_Pericyte_filter.sorted.bam \
+Pericyte/scU_Pericyte_filter.sorted.bam \
+Pericyte/scV_Pericyte_filter.sorted.bam \
+Pericyte/scW_Pericyte_filter.sorted.bam \
+Pericyte/scX_Pericyte_filter.sorted.bam \
+Pericyte/scY_Pericyte_filter.sorted.bam \
+Pericyte/scZ_Pericyte_filter.sorted.bam \
+Pericyte/scAA_Pericyte_filter.sorted.bam \
+Pericyte/scAB_Pericyte_filter.sorted.bam \
+Pericyte/scAC_Pericyte_filter.sorted.bam \
+Pericyte/scAD_Pericyte_filter.sorted.bam \
+Pericyte/scAE_Pericyte_filter.sorted.bam \
+Pericyte/scAF_Pericyte_filter.sorted.bam \
+Pericyte/scAG_Pericyte_filter.sorted.bam \
+Pericyte/scAH_Pericyte_filter.sorted.bam \
+Pericyte/scAI_Pericyte_filter.sorted.bam \
+Pericyte/scAJ_Pericyte_filter.sorted.bam \
+Pericyte/scAK_Pericyte_filter.sorted.bam \
+Pericyte/scAL_Pericyte_filter.sorted.bam \
+Pericyte/scAM_Pericyte_filter.sorted.bam \
+Pericyte/scAN_Pericyte_filter.sorted.bam \
+Pericyte/scAO_Pericyte_filter.sorted.bam \
+Pericyte/scAP_Pericyte_filter.sorted.bam \
+Pericyte/scAQ_Pericyte_filter.sorted.bam \
+Pericyte/scAR_Pericyte_filter.sorted.bam
