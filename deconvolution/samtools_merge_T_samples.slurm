@@ -1,0 +1,53 @@
+#!/bin/bash
+#SBATCH --nodes=1
+#SBATCH --tasks=1
+#SBATCH --cpus-per-task=20
+#SBATCH --mem=80000
+#SBATCH --time=1-00:00:00
+#SBATCH --partition=standard
+#SBATCH --account=cphg-millerlab
+module load samtools
+samtools merge T_all_reads.bam T/scA_T_filter.sorted.bam \
+T/scB_T_filter.sorted.bam \
+T/scC_T_filter.sorted.bam \
+T/scD_T_filter.sorted.bam \
+T/scE_T_filter.sorted.bam \
+T/scF_T_filter.sorted.bam \
+T/scG_T_filter.sorted.bam \
+T/scH_T_filter.sorted.bam \
+T/scI_T_filter.sorted.bam \
+T/scJ_T_filter.sorted.bam \
+T/scK_T_filter.sorted.bam \
+T/scL_T_filter.sorted.bam \
+T/scM_T_filter.sorted.bam \
+T/scN_T_filter.sorted.bam \
+T/scO_T_filter.sorted.bam \
+T/scP_T_filter.sorted.bam \
+T/scQ_T_filter.sorted.bam \
+T/scR_T_filter.sorted.bam \
+T/scS_T_filter.sorted.bam \
+T/scT_T_filter.sorted.bam \
+T/scU_T_filter.sorted.bam \
+T/scV_T_filter.sorted.bam \
+T/scW_T_filter.sorted.bam \
+T/scX_T_filter.sorted.bam \
+T/scY_T_filter.sorted.bam \
+T/scZ_T_filter.sorted.bam \
+T/scAA_T_filter.sorted.bam \
+T/scAB_T_filter.sorted.bam \
+T/scAC_T_filter.sorted.bam \
+T/scAD_T_filter.sorted.bam \
+T/scAE_T_filter.sorted.bam \
+T/scAF_T_filter.sorted.bam \
+T/scAG_T_filter.sorted.bam \
+T/scAH_T_filter.sorted.bam \
+T/scAI_T_filter.sorted.bam \
+T/scAJ_T_filter.sorted.bam \
+T/scAK_T_filter.sorted.bam \
+T/scAL_T_filter.sorted.bam \
+T/scAM_T_filter.sorted.bam \
+T/scAN_T_filter.sorted.bam \
+T/scAO_T_filter.sorted.bam \
+T/scAP_T_filter.sorted.bam \
+T/scAQ_T_filter.sorted.bam \
+T/scAR_T_filter.sorted.bam
